@@ -1,0 +1,25 @@
+# Available properties:
+#  :uri: 'hello'                                           endpoint path --> THIS IS MANDATORY
+#  :response: 'login/success'                                   relative path to json to be returned --> ALTERNATIVE TO GENERATE_RESPONSE
+#  :generate_response: 'MockBackend::API.bespoke'     function to call to generate the response --> ALTERNATIVE TO JSON
+#  :delay: 2                                                seconds to wait before returning --> DEFAULT 0
+#  :status: 200                                             HTTP status to return --> DEFAULT 200
+#  :methods: 'PUT DELETE'                                   HTTP methods accepted --> DEFAULT 'GET'
+#  :params: { "a": "2", "b": "3" }                          Additional parameters --> DEFAULT nil
+#  :allow_dynamic_config: true/false                        Allows dynamic configuration --> DEFAULT true
+#  :administrative: true/false                              Marks the endpoint as not related to application
+#
+# The same properties can also be used to specify a dynamic configuration.
+# In that case, the dynamic config will be merged to the standard one if the requested path matches the :uri property OR if :uri is nil.
+#
+# For example, given the following dynamic configurations:
+#   [
+#     { path: 'path1', json: 'json1' },
+#     { json: 'anything' },
+#     { path: 'path2', json: 'json2' }
+#   ]
+# the sequence of calls: path2, path2, path1
+# will return: anything, json2, json1
+
+- :uri: 'example'
+  :response: 'api_response/example'

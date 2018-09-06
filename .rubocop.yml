@@ -1,0 +1,35 @@
+# Custom config for RuboCop static code analysis
+
+Style/Documentation:
+  Enabled: false
+
+Style/MethodMissing:
+  Enabled: false
+
+Style/AccessorMethodName:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  ExcludedMethods: ['describe', 'context']
+  Max: 30
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Security/Eval:
+  Enabled: false
